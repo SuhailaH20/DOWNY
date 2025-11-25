@@ -20,7 +20,7 @@ struct AllCards: View {
         VStack(spacing: 42) {
             ColorCard(color: .yellowey) {
                 CardContent(
-                    imageName: "Image",
+                    imageName: "eating",
                     title: "Eating food",
                     description: "Children brush their teeth twice a day \nwith their beautiful toothbrushes."
                 )
@@ -44,7 +44,7 @@ struct AllCards: View {
             
             ColorCard(color: .bluey) {
                 CardContent(
-                    imageName: "Image",
+                    imageName: "brushingTeeth4",
                     title: "Brushing teeth",
                     description: "Children brush their teeth twice a day \nwith their beautiful toothbrushes."
                 )
