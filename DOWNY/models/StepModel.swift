@@ -6,8 +6,7 @@
 //
 
 import SwiftUI
-struct StepModel: Identifiable {
-    let id = UUID()
+struct StepModel {
     let title: String
     let description: String
     let imageName: String
