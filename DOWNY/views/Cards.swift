@@ -8,11 +8,15 @@
 import SwiftUI
 
 public struct Cards: View {
+    @Binding var selectedCard: String?
+    
     public var body: some View {
-        
-        StepFlowView()
-
-        .background(backgroundImage())
+        if let selected = selectedCard, selected == "eatingFood" {
+            EatingFoodCardsView(selectedCard: $selectedCard)
+        } else {
+            StepFlowView()
+                .background(backgroundImage())
+        }
     }
 }
 
@@ -90,12 +94,13 @@ struct StepCardContent: View {
                 
                 Image(imageName)
                     .resizable()
-                    .frame(width: 343, height: 514)
+                //changed width and height
+                    .frame(width: 300, height: 500)
                     .cornerRadius(16)
             }
             
             Button(action: {
-                onPlay()     
+                onPlay()
             }) {
                 ZStack {
                     RoundedRectangle(cornerRadius: 100)
@@ -109,7 +114,8 @@ struct StepCardContent: View {
                     }
                 }
             }
-            .padding(8)
+            //changed padding
+            .padding(-18)
         }
     }
 }
@@ -164,12 +170,75 @@ struct StepFlowView: View {
         }
     }
 }
-
-
-
-
+/***********************************************/
+//EATING FOOD CARD
+//APPEARS WHEN CLICKING ON EATING FOOD IN boardPage
+struct EatingFoodCardsView: View {
+    @State private var currentIndex = 0
+    @Binding var selectedCard: String?
+    
+    let eatingFoodSteps: [StepModel] = [
+        StepModel(
+            title: "Eating Food",
+            description: "Children eat healthy food to grow strong\nand stay energetic throughout the day.",
+            imageName: "hungry",
+            color: .yellowey
+        ),
+        StepModel(
+            title: "Eating Food",
+            description: "Children eat healthy food to grow strong\nand stay energetic throughout the day.",
+            imageName: "thinkingOfFood",
+            color: .yellowey
+        ),
+        StepModel(
+            title: "Eating Food",
+            description: "Children eat healthy food to grow strong\nand stay energetic throughout the day.",
+            imageName: "FindanApple",
+            color: .yellowey
+        ),
+        StepModel(
+            title: "Eating Food",
+            description: "Children eat healthy food to grow strong\nand stay energetic throughout the day.",
+            imageName: "eatinganApple",
+            color: .yellowey
+        ),
+        StepModel(
+            title: "Eating Food",
+            description: "Children eat healthy food to grow strong\nand stay energetic throughout the day.",
+            imageName: "fullStom",
+            color: .yellowey
+        ),
+    ]
+    
+    var body: some View {
+        VStack {
+            Spacer()
+            StepCard(
+                color: eatingFoodSteps[currentIndex].color,
+                currentIndex: currentIndex,
+                totalSteps: eatingFoodSteps.count
+            ) {
+                StepCardContent(
+                    title: eatingFoodSteps[currentIndex].title,
+                    description: eatingFoodSteps[currentIndex].description,
+                    imageName: eatingFoodSteps[currentIndex].imageName,
+                    onPlay: {
+                        if currentIndex < eatingFoodSteps.count - 1 {
+                            currentIndex += 1
+                        }
+                    }
+                )
+            }
+            
+            Spacer()
+        }
+        .background(backgroundImage())
+    }
+    /************************************************************************/
+}
 
 
 #Preview {
-    Cards()
+    @Previewable @State var selectedCard: String? = nil
+    return Cards(selectedCard: $selectedCard)
 }

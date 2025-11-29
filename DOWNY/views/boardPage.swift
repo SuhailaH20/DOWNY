@@ -1,28 +1,40 @@
 import SwiftUI
 
 struct BoardPage: View {
+    @State private var selectedCard: String? = nil
+    
     var body: some View {
-            
+        if selectedCard != nil {
+            Cards(selectedCard: $selectedCard)
+        } else {
             VStack {
                 Image("Title")
                 Spacer().frame(height: 42)
                 
-                AllCards()
+                AllCards(selectedCard: $selectedCard)
             }
             .background(backgroundImage())
+        }
     }
 }
 
 struct AllCards: View {
+    @Binding var selectedCard: String?
+    
     var body: some View {
         VStack(spacing: 42) {
-            ColorCard(color: .yellowey) {
-                CardContent(
-                    imageName: "eating",
-                    title: "Eating food",
-                    description: "Children brush their teeth twice a day \nwith their beautiful toothbrushes."
-                )
+            Button(action: {
+                selectedCard = "eatingFood"
+            }) {
+                ColorCard(color: .yellowey) {
+                    CardContent(
+                        imageName: "eating",
+                        title: "Eating Food",
+                        description: "Children brush their teeth twice a day \nwith their beautiful toothbrushes."
+                    )
+                }
             }
+            .buttonStyle(PlainButtonStyle())
             
             ColorCard(color: .redey) {
                 CardContent(
@@ -51,8 +63,6 @@ struct AllCards: View {
     }
 }
 
-//Resuable cards **you just need to send the color and the content**
-
 struct ColorCard<Content: View>: View {
     let color: Color
     let content: Content
@@ -74,7 +84,6 @@ struct ColorCard<Content: View>: View {
     }
 }
 
-
 struct CardContent: View {
     let imageName: String
     let title: String
@@ -91,11 +100,13 @@ struct CardContent: View {
             VStack(alignment: .leading) {
                 Text(title)
                     .font(.system(size: 50, weight: .bold))
+                    .foregroundColor(.black)
                 
                 Spacer().frame(height: 12)
                 
                 Text(description)
                     .font(.system(size: 18, weight: .regular))
+                    .foregroundColor(.black)
             }
         }
     }
