@@ -38,7 +38,7 @@ struct AllCards: View {
             
             ColorCard(color: .redey) {
                 CardContent(
-                    imageName: "Image",
+                    imageName: "kind",
                     title: "Being kind",
                     description: "Children brush their teeth twice a day \nwith their beautiful toothbrushes."
                 )
@@ -46,11 +46,12 @@ struct AllCards: View {
             
             ColorCard(color: .greeney) {
                 CardContent(
-                    imageName: "Image",
+                    imageName: "combing",
                     title: "Combing hair",
                     description: "Children brush their teeth twice a day \nwith their beautiful toothbrushes."
                 )
             }
+            
             Button(action: {
                 selectedCard = "brushingTeeth"
             }) {
@@ -61,7 +62,9 @@ struct AllCards: View {
                         description: "Children brush their teeth twice a day \nwith their beautiful toothbrushes."
                     )
                 }
-            }}
+            }
+            
+        }
     }
 }
 
