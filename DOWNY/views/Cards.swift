@@ -15,7 +15,7 @@ public struct Cards: View {
             EatingFoodCardsView(selectedCard: $selectedCard)
                 .background(backgroundImage())
         } else {
-            BeingKindCardsView(selectedCard: $selectedCard)
+            EatingFoodCardsView(selectedCard: $selectedCard)
                 .background(backgroundImage())
         }
     }
@@ -27,23 +27,25 @@ struct StepCard<Content: View>: View {
     let content: Content
     let currentIndex: Int
     let totalSteps: Int
-    
+    let onNext: () -> Void
+
     init(
         color: Color,
         currentIndex: Int,
         totalSteps: Int,
+        onNext: @escaping () -> Void,
         @ViewBuilder content: () -> Content
     ) {
         self.color = color
         self.currentIndex = currentIndex
         self.totalSteps = totalSteps
+        self.onNext = onNext
         self.content = content()
     }
     
     var body: some View {
         VStack(spacing: 24) {
 
-            // PROGRESS DOTS
             HStack(spacing: 12) {
                 ForEach(0..<totalSteps, id: \.self) { index in
                     Circle()
@@ -56,15 +58,13 @@ struct StepCard<Content: View>: View {
                 }
             }
 
-            // Main content inside card
             content
-
         }
         .frame(width: 602, height: 782)
         .background(
             RoundedRectangle(cornerRadius: 69)
                 .foregroundStyle(color)
-                .shadow(color: Color.black.opacity(0.25), radius: 10, x: 9, y: 30)
+                .shadow(color: .black.opacity(0.25), radius: 10, x: 9, y: 30)
                 .overlay(
                     Image("pattern")
                         .resizable()
@@ -72,13 +72,31 @@ struct StepCard<Content: View>: View {
                         .opacity(0.08)
                 )
         )
+        .overlay(
+            playButton,
+            alignment: .bottomTrailing
+        )
     }
 
+    private var playButton: some View {
+        Button(action: onNext) {
+            HStack {
+                Image(systemName: "play.fill").foregroundColor(.white)
+                Text("Play").foregroundColor(.white)
+            }
+            .frame(width: 91, height: 50)
+            .background(Color.red.opacity(0.8))
+            .cornerRadius(100)
+        }
+        .padding(30)
+    }
 }
+
+
 
 struct StepFlow<Content: View>: View {
     let steps: [StepModel]
-    let content: (StepModel, @escaping () -> Void) -> Content
+    let content: (StepModel) -> Content
     
     @State private var currentIndex = 0
     
@@ -86,9 +104,10 @@ struct StepFlow<Content: View>: View {
         StepCard(
             color: steps[currentIndex].color,
             currentIndex: currentIndex,
-            totalSteps: steps.count
+            totalSteps: steps.count,
+            onNext: next
         ) {
-            content(steps[currentIndex], next)
+            content(steps[currentIndex])
         }
     }
     
@@ -100,46 +119,33 @@ struct StepFlow<Content: View>: View {
 }
 
 
+
 struct StepCardContent: View {
     let step: StepModel
-    let onNext: () -> Void
-    
+
     var body: some View {
-        ZStack(alignment: .bottomTrailing) {
-            VStack(spacing: 20) {
-                Text(step.title)
-                    .font(.system(size: 72, weight: .bold))
-                    .foregroundColor(Color.white)
-                    .multilineTextAlignment(.center)
+        VStack(spacing: 20) {
+            Text(step.title)
+                .font(.system(size: 72, weight: .bold))
+                .foregroundColor(.white)
+                .multilineTextAlignment(.center)
 
-                Text(step.description)
-                    .font(.system(size: 24))
-                    .foregroundColor(Color.white)
-                    .multilineTextAlignment(.center)
+            Text(step.description)
+                .font(.system(size: 24))
+                .foregroundColor(.white)
+                .multilineTextAlignment(.center)
 
-                Image(step.imageName)
-                    .resizable()
-                    .frame(width: 343, height: 514)
-                    .cornerRadius(16)
-            }
-            
-            Button(action: onNext) {
-                ZStack {
-                    RoundedRectangle(cornerRadius: 100)
-                        .frame(width: 91, height: 50)
-                        .foregroundStyle(Color.red.opacity(0.8))
-                    HStack {
-                        Image(systemName: "play.fill")
-                            .foregroundColor(.white)
-                        Text("Play")
-                            .foregroundColor(.white)
-                    }
-                }
-            }
+            Image(step.imageName)
+                .resizable()
+                .frame(width: 343, height: 514)
+                .cornerRadius(16)
         }
     }
 }
 
+
+
+/****THE CARDS CONTENT  **/
 
 struct BrushingTeethCardsView: View {
     let steps: [StepModel] = [
@@ -150,9 +156,10 @@ struct BrushingTeethCardsView: View {
     ]
 
     var body: some View {
-        StepFlow(steps: steps) { step, next in
-            StepCardContent(step: step, onNext: next)
+        StepFlow(steps: steps) { step in
+            StepCardContent(step: step)
         }
+
     }
 }
 
@@ -171,9 +178,10 @@ struct EatingFoodCardsView: View {
     ]
     
     var body: some View {
-        StepFlow(steps: steps) { step, next in
-            StepCardContent(step: step, onNext: next)
-            }
+        StepFlow(steps: steps) { step in
+            StepCardContent(step: step)
+        }
+
         }
     }
 
@@ -188,9 +196,10 @@ struct BeingKindCardsView: View {
     ]
     
     var body: some View {
-        StepFlow(steps: steps) { step, next in
-            StepCardContent(step: step, onNext: next)
-            }
+        StepFlow(steps: steps) { step in
+            StepCardContent(step: step)
+        }
+
         }
     }
 
@@ -204,9 +213,10 @@ struct BrushingHairCardsView: View {
     ]
     
     var body: some View {
-        StepFlow(steps: steps) { step, next in
-            StepCardContent(step: step, onNext: next)
-            }
+        StepFlow(steps: steps) { step in
+            StepCardContent(step: step)
+        }
+
         }
     }
 
