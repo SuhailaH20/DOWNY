@@ -20,6 +20,7 @@ public struct Cards: View {
     }
 }
 
+
 struct StepCard<Content: View>: View {
     let color: Color
     let content: Content
@@ -115,7 +116,7 @@ struct StepCardContent: View {
                 }
             }
             //changed padding
-            .padding(-18)
+            .padding(8)
         }
     }
 }

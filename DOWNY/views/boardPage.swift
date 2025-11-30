@@ -51,15 +51,17 @@ struct AllCards: View {
                     description: "Children brush their teeth twice a day \nwith their beautiful toothbrushes."
                 )
             }
-            
-            ColorCard(color: .bluey) {
-                CardContent(
-                    imageName: "brushingTeeth4",
-                    title: "Brushing teeth",
-                    description: "Children brush their teeth twice a day \nwith their beautiful toothbrushes."
-                )
-            }
-        }
+            Button(action: {
+                selectedCard = "brushingTeeth"
+            }) {
+                ColorCard(color: .bluey) {
+                    CardContent(
+                        imageName: "brushingTeeth4",
+                        title: "Brushing teeth",
+                        description: "Children brush their teeth twice a day \nwith their beautiful toothbrushes."
+                    )
+                }
+            }}
     }
 }
 
