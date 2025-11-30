@@ -15,7 +15,7 @@ public struct Cards: View {
             EatingFoodCardsView(selectedCard: $selectedCard)
                 .background(backgroundImage())
         } else {
-            BeingKindCardsView(selectedCard: $selectedCard)
+            BrushingHairCardsView(selectedCard: $selectedCard)
                 .background(backgroundImage())
         }
     }
@@ -193,6 +193,23 @@ struct BeingKindCardsView: View {
             }
         }
     }
+
+struct BrushingHairCardsView: View {
+    @Binding var selectedCard: String?
+    
+    let steps: [StepModel] = [
+        StepModel(title: "Combing hair", description: "Children brush their teeth twice a day /nwith their beautiful toothbrushes.", imageName: "messyHair", color: .greeney),
+        StepModel(title: "Combing hair", description: "Children brush their teeth twice a day /nwith their beautiful toothbrushes.", imageName: "combing", color: .greeney),
+        StepModel(title: "Combing hair", description: "Children brush their teeth twice a day /nwith their beautiful toothbrushes.", imageName: "kind", color: .greeney),
+    ]
+    
+    var body: some View {
+        StepFlow(steps: steps) { step, next in
+            StepCardContent(step: step, onNext: next)
+            }
+        }
+    }
+
 
 
 #Preview {
