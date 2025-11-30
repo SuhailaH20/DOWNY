@@ -15,16 +15,16 @@ public struct Cards: View {
             switch selectedCard {
                 
             case "eatingFood":
-                EatingFoodCardsView(selectedCard: $selectedCard)
+                EatingFoodCardsView()
                 
             case "beingKind":
-                BeingKindCardsView(selectedCard: $selectedCard)
+                BeingKindCardsView()
                 
             case "brushingTeeth":
-                BrushingTeethCardsView(selectedCard: $selectedCard) 
+                BrushingTeethCardsView() 
                 
             case "brushingHair":
-                BrushingHairCardsView(selectedCard: $selectedCard)
+                BrushingHairCardsView()
                 
             default:
                 Text("No card selected")
@@ -163,7 +163,6 @@ struct StepCardContent: View {
 /****THE CARDS CONTENT  **/
 
 struct BrushingTeethCardsView: View {
-    @Binding var selectedCard: String?
 
     let steps: [StepModel] = [
         StepModel(title: "Brushing Teeth", description: "Children brush their teeth twice a day\nwith their beautiful toothbrushes.", imageName: "brushingTeeth1", color: .bluey),
@@ -184,7 +183,6 @@ struct BrushingTeethCardsView: View {
 
 
 struct EatingFoodCardsView: View {
-    @Binding var selectedCard: String? 
     
     let steps: [StepModel] = [
         StepModel(title: "Eating Food", description: "Children eat healthy food to grow strong\nand stay energetic throughout the day.", imageName: "hungry", color: .orangy),
@@ -204,7 +202,6 @@ struct EatingFoodCardsView: View {
 
 
 struct BeingKindCardsView: View {
-    @Binding var selectedCard: String?
     
     let steps: [StepModel] = [
         StepModel(title: "Being kind", description: "When we meet our friends or family, we greet \nthem with a smile.", imageName: "smiley", color: .redey),
@@ -221,7 +218,6 @@ struct BeingKindCardsView: View {
     }
 
 struct BrushingHairCardsView: View {
-    @Binding var selectedCard: String?
     
     let steps: [StepModel] = [
         StepModel(title: "Combing hair", description: "Children brush their teeth twice a day /nwith their beautiful toothbrushes.", imageName: "messyHair", color: .greeney),
