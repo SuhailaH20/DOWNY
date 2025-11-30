@@ -36,6 +36,9 @@ struct AllCards: View {
             }
             .buttonStyle(PlainButtonStyle())
             
+            Button(action: {
+                selectedCard = "beingKind"
+            }){
             ColorCard(color: .redey) {
                 CardContent(
                     imageName: "kind",
@@ -43,15 +46,19 @@ struct AllCards: View {
                     description: "Children brush their teeth twice a day \nwith their beautiful toothbrushes."
                 )
             }
+        }.buttonStyle(PlainButtonStyle())
             
-            ColorCard(color: .greeney) {
-                CardContent(
-                    imageName: "combing",
-                    title: "Combing hair",
-                    description: "Children brush their teeth twice a day \nwith their beautiful toothbrushes."
-                )
-            }
-            
+            Button(action: {
+                selectedCard = "beingKind"
+            }){
+                ColorCard(color: .greeney) {
+                    CardContent(
+                        imageName: "combing",
+                        title: "Combing hair",
+                        description: "Children brush their teeth twice a day \nwith their beautiful toothbrushes."
+                    )
+                }
+            }.buttonStyle(PlainButtonStyle())
             Button(action: {
                 selectedCard = "brushingTeeth"
             }) {
@@ -62,7 +69,7 @@ struct AllCards: View {
                         description: "Children brush their teeth twice a day \nwith their beautiful toothbrushes."
                     )
                 }
-            }
+            }.buttonStyle(PlainButtonStyle())
             
         }
     }

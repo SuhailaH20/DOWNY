@@ -15,7 +15,7 @@ public struct Cards: View {
             EatingFoodCardsView(selectedCard: $selectedCard)
                 .background(backgroundImage())
         } else {
-            BrushingHairCardsView(selectedCard: $selectedCard)
+            BeingKindCardsView(selectedCard: $selectedCard)
                 .background(backgroundImage())
         }
     }
@@ -141,7 +141,7 @@ struct StepCardContent: View {
 }
 
 
-struct StepFlowView: View {
+struct BrushingTeethCardsView: View {
     let steps: [StepModel] = [
         StepModel(title: "Brushing Teeth", description: "Children brush their teeth twice a day\nwith their beautiful toothbrushes.", imageName: "brushingTeeth1", color: .bluey),
         StepModel(title: "Washing Hands", description: "Wash hands with soap after using the bathroom.", imageName: "brushingTeeth2", color: .bluey),
