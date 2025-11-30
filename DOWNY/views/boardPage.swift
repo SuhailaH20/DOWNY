@@ -37,7 +37,7 @@ struct AllCards: View {
                     CardContent(
                         imageName: "eating",
                         title: "Eating Food",
-                        description: "Children brush their teeth twice a day \nwith their beautiful toothbrushes."
+                        description: "Children should eat healthy food to  \n grow strong and stay active."
                     )
                 }
             }
@@ -50,7 +50,7 @@ struct AllCards: View {
                 CardContent(
                     imageName: "kind",
                     title: "Being kind",
-                    description: "Children brush their teeth twice a day \nwith their beautiful toothbrushes."
+                    description: "Children should be kind to others \n and treat them very well."
                 )
             }
         }.buttonStyle(PlainButtonStyle())
@@ -62,7 +62,7 @@ struct AllCards: View {
                     CardContent(
                         imageName: "combing",
                         title: "Combing hair",
-                        description: "Children brush their teeth twice a day \nwith their beautiful toothbrushes."
+                        description: "Children brush their hair and  take \ncare of their look."
                     )
                 }
             }.buttonStyle(PlainButtonStyle())
