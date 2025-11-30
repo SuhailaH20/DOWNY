@@ -109,10 +109,12 @@ struct StepCardContent: View {
             VStack(spacing: 20) {
                 Text(step.title)
                     .font(.system(size: 72, weight: .bold))
+                    .foregroundColor(Color.white)
                     .multilineTextAlignment(.center)
 
                 Text(step.description)
                     .font(.system(size: 24))
+                    .foregroundColor(Color.white)
                     .multilineTextAlignment(.center)
 
                 Image(step.imageName)
@@ -161,11 +163,11 @@ struct EatingFoodCardsView: View {
     @Binding var selectedCard: String? 
     
     let steps: [StepModel] = [
-        StepModel(title: "Eating Food", description: "Children eat healthy food to grow strong\nand stay energetic throughout the day.", imageName: "hungry", color: .yellowey),
-        StepModel(title: "Eating Food", description: "Children eat healthy food to grow strong\nand stay energetic throughout the day.", imageName: "thinkingOfFood", color: .yellowey),
-        StepModel(title: "Eating Food", description: "Children eat healthy food to grow strong\nand stay energetic throughout the day.", imageName: "FindanApple", color: .yellowey),
-        StepModel(title: "Eating Food", description: "Children eat healthy food to grow strong\nand stay energetic throughout the day.", imageName: "eatinganApple", color: .yellowey),
-        StepModel(title: "Eating Food", description: "Children eat healthy food to grow strong\nand stay energetic throughout the day.", imageName: "fullStom.", color: .yellowey),
+        StepModel(title: "Eating Food", description: "Children eat healthy food to grow strong\nand stay energetic throughout the day.", imageName: "hungry", color: .orangy),
+        StepModel(title: "Eating Food", description: "Children eat healthy food to grow strong\nand stay energetic throughout the day.", imageName: "thinkingOfFood", color: .orangy),
+        StepModel(title: "Eating Food", description: "Children eat healthy food to grow strong\nand stay energetic throughout the day.", imageName: "FindanApple", color: .orangy),
+        StepModel(title: "Eating Food", description: "Children eat healthy food to grow strong\nand stay energetic throughout the day.", imageName: "eatinganApple", color: .orangy),
+        StepModel(title: "Eating Food", description: "Children eat healthy food to grow strong\nand stay energetic throughout the day.", imageName: "fullStom.", color: .orangy),
     ]
     
     var body: some View {

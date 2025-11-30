@@ -26,7 +26,7 @@ struct AllCards: View {
             Button(action: {
                 selectedCard = "eatingFood"
             }) {
-                ColorCard(color: .yellowey) {
+                ColorCard(color: .orangy) {
                     CardContent(
                         imageName: "eating",
                         title: "Eating Food",
@@ -102,13 +102,13 @@ struct CardContent: View {
             VStack(alignment: .leading) {
                 Text(title)
                     .font(.system(size: 50, weight: .bold))
-                    .foregroundColor(.black)
+                    .foregroundColor(.white)
                 
                 Spacer().frame(height: 12)
                 
                 Text(description)
                     .font(.system(size: 18, weight: .regular))
-                    .foregroundColor(.black)
+                    .foregroundColor(.white)
             }
         }
     }
