@@ -29,53 +29,18 @@ struct AllCards: View {
     @Binding var selectedCard: String?
     
     var body: some View {
-        VStack(spacing: 42) {
-            Button(action: {
-                selectedCard = "eatingFood"
-            }) {
-                ColorCard(color: .orangy) {
-                    CardContent(
-                        imageName: "eating",
-                        title: "Eating Food",
-                        description: "Children should eat healthy food to  \n grow strong and stay active."
-                    )
-                }
-            }
-            .buttonStyle(PlainButtonStyle())
-            
-            Button(action: {
-                selectedCard = "beingKind"
-            }){
-            ColorCard(color: .redey) {
-                CardContent(
-                    imageName: "kind",
-                    title: "Being kind",
-                    description: "Children should be kind to others \n and treat them very well."
-                )
-            }
-        }.buttonStyle(PlainButtonStyle())
-            
-            Button(action: {
-                selectedCard = "brushingHair"
-            }){
-                ColorCard(color: .greeney) {
-                    CardContent(
-                        imageName: "combing",
-                        title: "Combing hair",
-                        description: "Children brush their hair and  take \ncare of their look."
-                    )
-                }
-            }.buttonStyle(PlainButtonStyle())
-            
-            Button(action: {
-                selectedCard = "brushingTeeth"
-            }) {
-                ColorCard(color: .bluey) {
-                    CardContent(
-                        imageName: "brushingTeeth4",
-                        title: "Brushing teeth",
-                        description: "Children brush their teeth twice a day \nwith their beautiful toothbrushes."
-                    )
+        ScrollView{
+            VStack(spacing: 42) {
+                Button(action: {
+                    selectedCard = "eatingFood"
+                }) {
+                    ColorCard(color: .orangy) {
+                        CardContent(
+                            imageName: "eating",
+                            title: "Eating Food",
+                            description: "Children should eat healthy food to  \n grow strong and stay active."
+                        )
+                    }
                 }
                 .buttonStyle(PlainButtonStyle())
                 
@@ -86,7 +51,7 @@ struct AllCards: View {
                         CardContent(
                             imageName: "kind",
                             title: "Being kind",
-                            description: "Children brush their teeth twice a day \nwith their beautiful toothbrushes."
+                            description: "Children should be kind to others \n and treat them very well."
                         )
                     }
                 }.buttonStyle(PlainButtonStyle())
@@ -98,7 +63,7 @@ struct AllCards: View {
                         CardContent(
                             imageName: "combing",
                             title: "Combing hair",
-                            description: "Children brush their teeth twice a day \nwith their beautiful toothbrushes."
+                            description: "Children brush their hair and  take \ncare of their look."
                         )
                     }
                 }.buttonStyle(PlainButtonStyle())
@@ -115,68 +80,34 @@ struct AllCards: View {
                     }
                 }.buttonStyle(PlainButtonStyle())
                 
-                Button(action: {
-                    selectedCard = "brushingTeeth"
-                }) {
-                    ColorCard(color: .bluey) {
-                        CardContent(
-                            imageName: "brushingTeeth4",
-                            title: "Brushing teeth",
-                            description: "Children brush their teeth twice a day \nwith their beautiful toothbrushes."
-                        )
-                    }
-                }.buttonStyle(PlainButtonStyle())
+                //-------------------------------
+//                            Button(action: {
+//                                selectedCard = "brushingTeeth"
+//                            }) {
+//                                ColorCard(color: .bluey) {
+//                                    CardContent(
+//                                        imageName: "brushingTeeth4",
+//                                        title: "Brushing teeth",
+//                                        description: "Children brush their teeth twice a day \nwith their beautiful toothbrushes."
+//                                    )
+//                                }
+//                            }.buttonStyle(PlainButtonStyle())
+//                
+//                Button(action: {
+//                    selectedCard = "brushingTeeth"
+//                }) {
+//                    ColorCard(color: .bluey) {
+//                        CardContent(
+//                            imageName: "brushingTeeth4",
+//                            title: "Brushing teeth",
+//                            description: "Children brush their teeth twice a day \nwith their beautiful toothbrushes."
+//                        )
+//                    }
+//                }.buttonStyle(PlainButtonStyle())
+                //-----------------------------------
                 
-                Button(action: {
-                    selectedCard = "brushingTeeth"
-                }) {
-                    ColorCard(color: .bluey) {
-                        CardContent(
-                            imageName: "brushingTeeth4",
-                            title: "Brushing teeth",
-                            description: "Children brush their teeth twice a day \nwith their beautiful toothbrushes."
-                        )
-                    }
-                }.buttonStyle(PlainButtonStyle())
-                
-                Button(action: {
-                    selectedCard = "brushingTeeth"
-                }) {
-                    ColorCard(color: .bluey) {
-                        CardContent(
-                            imageName: "brushingTeeth4",
-                            title: "Brushing teeth",
-                            description: "Children brush their teeth twice a day \nwith their beautiful toothbrushes."
-                        )
-                    }
-                }.buttonStyle(PlainButtonStyle())
-                
-                Button(action: {
-                    selectedCard = "brushingTeeth"
-                }) {
-                    ColorCard(color: .bluey) {
-                        CardContent(
-                            imageName: "brushingTeeth4",
-                            title: "Brushing teeth",
-                            description: "Children brush their teeth twice a day \nwith their beautiful toothbrushes."
-                        )
-                    }
-                }.buttonStyle(PlainButtonStyle())
-                
-                Button(action: {
-                    selectedCard = "brushingTeeth"
-                }) {
-                    ColorCard(color: .bluey) {
-                        CardContent(
-                            imageName: "brushingTeeth4",
-                            title: "Brushing teeth",
-                            description: "Children brush their teeth twice a day \nwith their beautiful toothbrushes."
-                        )
-                    }
-                }.buttonStyle(PlainButtonStyle())
             }
-        }
-    }
+        }}
 }
 
 struct ColorCard<Content: View>: View {
