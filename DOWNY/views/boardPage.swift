@@ -80,34 +80,10 @@ struct AllCards: View {
                     }
                 }.buttonStyle(PlainButtonStyle())
                 
-                //-------------------------------
-//                            Button(action: {
-//                                selectedCard = "brushingTeeth"
-//                            }) {
-//                                ColorCard(color: .bluey) {
-//                                    CardContent(
-//                                        imageName: "brushingTeeth4",
-//                                        title: "Brushing teeth",
-//                                        description: "Children brush their teeth twice a day \nwith their beautiful toothbrushes."
-//                                    )
-//                                }
-//                            }.buttonStyle(PlainButtonStyle())
-//                
-//                Button(action: {
-//                    selectedCard = "brushingTeeth"
-//                }) {
-//                    ColorCard(color: .bluey) {
-//                        CardContent(
-//                            imageName: "brushingTeeth4",
-//                            title: "Brushing teeth",
-//                            description: "Children brush their teeth twice a day \nwith their beautiful toothbrushes."
-//                        )
-//                    }
-//                }.buttonStyle(PlainButtonStyle())
-                //-----------------------------------
                 
             }
-        }}
+        }
+    }
 }
 
 struct ColorCard<Content: View>: View {
