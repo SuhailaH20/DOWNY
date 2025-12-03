@@ -7,6 +7,7 @@
 
 import SwiftUI
 struct StepModel {
+    let Icon: String
     let title: String
     let description: String
     let imageName: String

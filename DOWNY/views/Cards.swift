@@ -15,20 +15,22 @@ public struct Cards: View {
             switch selectedCard {
                 
             case "eatingFood":
-                EatingFoodCardsView()
+                BrushingTeethCardsView()
+             //   EatingFoodCardsView()
                 
             case "beingKind":
-                BeingKindCardsView()
+                BrushingTeethCardsView()
+               // BeingKindCardsView()
                 
             case "brushingTeeth":
                 BrushingTeethCardsView() 
                 
             case "brushingHair":
-                BrushingHairCardsView()
+                BrushingTeethCardsView()
+            //    BrushingHairCardsView()
                 
             default:
-                Text("No card selected")
-                    .foregroundColor(.gray)
+                BrushingTeethCardsView()
             }
         }
         .background(backgroundImage())
@@ -59,7 +61,7 @@ struct StepCard<Content: View>: View {
     }
     
     var body: some View {
-        VStack(spacing: 24) {
+        VStack(spacing: -10){
 
             HStack(spacing: 12) {
                 ForEach(0..<totalSteps, id: \.self) { index in
@@ -72,10 +74,12 @@ struct StepCard<Content: View>: View {
                         )
                 }
             }
-
+            Spacer().frame(height: 30)
             content
+            
+            playButton
         }
-        .frame(width: 602, height: 782)
+        .frame(width: 700, height: 1000)
         .background(
             RoundedRectangle(cornerRadius: 69)
                 .foregroundStyle(color)
@@ -87,23 +91,21 @@ struct StepCard<Content: View>: View {
                         .opacity(0.08)
                 )
         )
-        .overlay(
-            playButton,
-            alignment: .bottomTrailing
-        )
+
     }
 
     private var playButton: some View {
         Button(action: onNext) {
             HStack {
-                Image(systemName: "play.fill").foregroundColor(.white)
-                Text("Play").foregroundColor(.white)
-            }
-            .frame(width: 91, height: 50)
-            .background(Color.red.opacity(0.8))
+                Image(systemName: "play.fill")
+                Spacer().frame(width: 33)
+                Text("Play")
+            }.font(.system(size: 48, weight: .bold))
+            .foregroundColor(.darkNvy)
+            .frame(width: 592, height: 123)
+            .background(Color.white.opacity(0.7))
             .cornerRadius(100)
         }
-        .padding(30)
     }
 }
 
@@ -140,20 +142,25 @@ struct StepCardContent: View {
 
     var body: some View {
         VStack(spacing: 20) {
+            Image(step.Icon)
+                .resizable()
+                .frame(width: 126, height: 144)
             Text(step.title)
-                .font(.system(size: 72, weight: .bold))
-                .foregroundColor(.white)
+                .font(.system(size: 101, weight: .bold))
+                .foregroundColor(.darkNvy)
                 .multilineTextAlignment(.center)
 
             Text(step.description)
-                .font(.system(size: 24))
-                .foregroundColor(.white)
+                .font(.system(size: 36))
+                .foregroundColor(.darkNvy)
                 .multilineTextAlignment(.center)
 
             Image(step.imageName)
                 .resizable()
-                .frame(width: 343, height: 514)
-                .cornerRadius(16)
+                .frame(width: 349, height: 334)
+
+        } .onAppear {
+            SpeechManager.shared.speak(step.description)
         }
     }
 }
@@ -165,10 +172,10 @@ struct StepCardContent: View {
 struct BrushingTeethCardsView: View {
 
     let steps: [StepModel] = [
-        StepModel(title: "Brushing Teeth", description: "Children apply toothapste on their toothbrushe.", imageName: "BT1", color: .bluey),
-        StepModel(title: "Brushing Teeth", description: "Children brush their teeth gently.", imageName: "BT2", color: .bluey),
-        StepModel(title: "Brushing Teeth", description: "Children rinse their mouths after brushing their teeth..", imageName: "BT3", color: .bluey),
-        StepModel(title: "Good Job", description: " ", imageName: "GJ", color: .bluey),
+        StepModel(Icon: "apple", title: "Brushing Teeth", description: "Apply toothapste \non their toothbrush.", imageName: "brushing1", color: .bluey),
+        StepModel(Icon: "apple",title: "Brushing Teeth", description: "Children brush their teeth gently.", imageName: "BT2", color: .bluey),
+        StepModel(Icon: "apple", title: "Brushing Teeth", description: "Children rinse their mouths after brushing their teeth..", imageName: "BT3", color: .bluey),
+        StepModel(Icon: " ", title: "Good Job", description: " ", imageName: "GJ", color: .bluey),
     ]
 
     var body: some View {
@@ -181,58 +188,58 @@ struct BrushingTeethCardsView: View {
 
 
 
-
-struct EatingFoodCardsView: View {
-    
-    let steps: [StepModel] = [
-        StepModel(title: "Eating Food", description: "When we feel hungry, we listen to our tummy \nand know it’s time to eat.", imageName: "hungry", color: .orangy),
-        StepModel(title: "Eating Food", description: "Children eat healthy food to grow strong\nand stay energetic throughout the day.", imageName: "eatinganApple", color: .orangy),
-        StepModel(title: "Eating Food", description: "After we eat, our tummy feels happy and full,\n and we have energy to play and learn..", imageName: "fullStom.", color: .orangy),
-        StepModel(title: "Good Job", description: " ", imageName: "GJ", color: .orangy),
-    ]
-    
-    var body: some View {
-        StepFlow(steps: steps) { step in
-            StepCardContent(step: step)
-        }
-
-        }
-    }
-
-
-struct BeingKindCardsView: View {
-    
-    let steps: [StepModel] = [
-        StepModel(title: "Being kind", description: "When we meet our friends or family, we greet \nthem with a smile.", imageName: "smiley", color: .redey),
-        StepModel(title: "Being kind", description: "We share, help, and use kind words because it makes everyone feel safe and happy.", imageName: "friend", color: .redey),
-        StepModel(title: "Being kind", description: "Giving gifts makes our heart feels warm,\n and the people around us feel good too.", imageName: "gift", color: .redey),
-        StepModel(title: "Good Job", description: " ", imageName: "GJ", color: .redey),
-    ]
-    
-    var body: some View {
-        StepFlow(steps: steps) { step in
-            StepCardContent(step: step)
-        }
-
-        }
-    }
-
-struct BrushingHairCardsView: View {
-    
-    let steps: [StepModel] = [
-        StepModel(title: "Combing hair", description: "Children feel upset when their hair gets messy.", imageName: "messyHair", color: .greeney),
-        StepModel(title: "Combing hair", description: "Children brush their hair gently \nusing their beautiful brushes.", imageName: "combing", color: .greeney),
-        StepModel(title: "Combing hair", description: "Children feel happy and confident after they \nfinish combing their hair.", imageName: "kind", color: .greeney),
-        StepModel(title: "Good Job", description: " ", imageName: "GJ", color: .greeney),
-    ]
-    
-    var body: some View {
-        StepFlow(steps: steps) { step in
-            StepCardContent(step: step)
-        }
-
-        }
-    }
+//
+//struct EatingFoodCardsView: View {
+//    
+//    let steps: [StepModel] = [
+//        StepModel(title: "Eating Food", description: "When we feel hungry, we listen to our tummy \nand know it’s time to eat.", imageName: "hungry", color: .orangy),
+//        StepModel(title: "Eating Food", description: "Children eat healthy food to grow strong\nand stay energetic throughout the day.", imageName: "eatinganApple", color: .orangy),
+//        StepModel(title: "Eating Food", description: "After we eat, our tummy feels happy and full,\n and we have energy to play and learn..", imageName: "fullStom.", color: .orangy),
+//        StepModel(title: "Good Job", description: " ", imageName: "GJ", color: .orangy),
+//    ]
+//    
+//    var body: some View {
+//        StepFlow(steps: steps) { step in
+//            StepCardContent(step: step)
+//        }
+//
+//        }
+//    }
+//
+//
+//struct BeingKindCardsView: View {
+//    
+//    let steps: [StepModel] = [
+//        StepModel(title: "Being kind", description: "When we meet our friends or family, we greet \nthem with a smile.", imageName: "smiley", color: .redey),
+//        StepModel(title: "Being kind", description: "We share, help, and use kind words because it makes everyone feel safe and happy.", imageName: "friend", color: .redey),
+//        StepModel(title: "Being kind", description: "Giving gifts makes our heart feels warm,\n and the people around us feel good too.", imageName: "gift", color: .redey),
+//        StepModel(title: "Good Job", description: " ", imageName: "GJ", color: .redey),
+//    ]
+//    
+//    var body: some View {
+//        StepFlow(steps: steps) { step in
+//            StepCardContent(step: step)
+//        }
+//
+//        }
+//    }
+//
+//struct BrushingHairCardsView: View {
+//    
+//    let steps: [StepModel] = [
+//        StepModel(title: "Combing hair", description: "Children feel upset when their hair gets messy.", imageName: "messyHair", color: .greeney),
+//        StepModel(title: "Combing hair", description: "Children brush their hair gently \nusing their beautiful brushes.", imageName: "combing", color: .greeney),
+//        StepModel(title: "Combing hair", description: "Children feel happy and confident after they \nfinish combing their hair.", imageName: "kind", color: .greeney),
+//        StepModel(title: "Good Job", description: " ", imageName: "GJ", color: .greeney),
+//    ]
+//    
+//    var body: some View {
+//        StepFlow(steps: steps) { step in
+//            StepCardContent(step: step)
+//        }
+//
+//        }
+//    }
 
 
 
