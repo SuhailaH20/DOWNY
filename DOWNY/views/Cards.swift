@@ -100,11 +100,12 @@ struct StepCard<Content: View>: View {
             HStack {
                 Image(systemName: "play.fill")
                 Spacer().frame(width: 33)
-                Text("Play")
+                Text("Play routine")
             }.font(.system(size: 48, weight: .bold))
             .foregroundColor(.darkNvy)
             .frame(width: 592, height: 123)
             .background(Color.white.opacity(0.7))
+            
             .cornerRadius(100)
         }
     }
@@ -143,16 +144,15 @@ struct StepCardContent: View {
 
     var body: some View {
         VStack(spacing: 20) {
-            Image(step.Icon)
-                .resizable()
-                .frame(width: 126, height: 144)
+
             Text(step.title)
-                .font(.system(size: 101, weight: .bold))
+                .font(.system(size: 60, weight: .bold))
                 .foregroundColor(.darkNvy)
                 .multilineTextAlignment(.center)
+            
 
             Text(step.description)
-                .font(.system(size: 36))
+                .font(.system(size: 48))
                 .foregroundColor(.darkNvy)
                 .multilineTextAlignment(.center)
 
@@ -163,6 +163,7 @@ struct StepCardContent: View {
         } .onAppear {
             SpeechManager.shared.speak(step.description)
         }
+
     }
 }
 
@@ -173,7 +174,7 @@ struct StepCardContent: View {
 struct BrushingTeethCardsView: View {
 
     let steps: [StepModel] = [
-        StepModel(Icon: "brush", title: "Brushing Teeth", description: "Apply toothapste \non their toothbrush.", imageName: "brushing1", color: .bluey),
+        StepModel(Icon: "brush", title: "Brushing Teeth", description: "Apply toothapste \non their toothbrush.", imageName: "BT1", color: .bluey),
         StepModel(Icon: "brush",title: "Brushing Teeth", description: "Children brush their teeth gently.", imageName: "brushing2", color: .bluey),
         StepModel(Icon: "brush", title: "Brushing Teeth", description: "Children rinse their mouths after brushing their teeth..", imageName: "brushing3", color: .bluey),
         StepModel(Icon: " ", title: "Good Job", description: " ", imageName: "GJ", color: .bluey),
