@@ -55,7 +55,7 @@ struct AllCards: View {
                     ColorCard(color: .babyYellow) {
                         CardContent(
                             imageName: "kind",
-                            title: "Being kind",
+                            title: "Being Kind",
                             description: "Children should be kind to others \n and treat them very well."
                         )
                     }
@@ -67,7 +67,7 @@ struct AllCards: View {
                     ColorCard(color: .babyBlue) {
                         CardContent(
                             imageName: "combing",
-                            title: "Combing hair",
+                            title: "Combing Hair",
                             description: "Children brush their hair and  take \ncare of their look."
                         )
                     }
@@ -79,14 +79,59 @@ struct AllCards: View {
                     ColorCard(color: .babyYellow) {
                         CardContent(
                             imageName: "Brush",
-                            title: "Brushing teeth",
+                            title: "Brushing Teeth",
                             description: "Children brush their teeth twice a day \nwith their beautiful toothbrushes."
                         )
                     }
                 }.buttonStyle(PlainButtonStyle())
+                //-----------------
+                Button(action: {
+                    selectedCard = "Takingshower"
+                }) {
+                    ColorCard(color: .babyBlue) {
+                        CardContent(
+                            imageName: "Shower",
+                            title: "Taking Shower",
+                            description: "When children get dirty they take \nshower in order to be clean.."
+                        )}}.buttonStyle(PlainButtonStyle())
+                
+                Button(action: {
+                    selectedCard = "Screentime"
+                }) {
+                    ColorCard(color: .babyYellow) {
+                        CardContent(
+                            imageName: "Screen",
+                            title: "Screen Time",
+                            description: "When children get dirty they take \nshower in order to be clean.."
+                        )}}.buttonStyle(PlainButtonStyle())
+                
+                Button(action: {
+                    selectedCard = "Washing"
+                }) {
+                    ColorCard(color: .babyBlue) {
+                        CardContent(
+                            imageName: "Washing",
+                            title: "Washing Hands",
+                            description: "When children get dirty they take \nshower in order to be clean.."
+                        )}}.buttonStyle(PlainButtonStyle())
+                
+                Button(action: {
+                    selectedCard = "Sleep"
+                }) {
+                    ColorCard(color: .babyYellow) {
+                        CardContent(
+                            imageName: "Sleep",
+                            title: "Sleep Early",
+                            description: "When children get dirty they take \nshower in order to be clean.."
+                        )}}.buttonStyle(PlainButtonStyle())
+                
+                
+                
+                
                 
                 
             }
+            
         }
     }
 }
