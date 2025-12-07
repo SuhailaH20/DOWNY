@@ -160,9 +160,14 @@ struct StepCardContent: View {
                 .resizable()
                 .frame(width: 349, height: 334)
 
-        } .onAppear {
-            SpeechManager.shared.speak(step.description)
-        }
+       }.onAppear {
+           if let audio = step.audioF {
+               AudioPlayerManager.shared.playSound(named: audio)
+           }
+       }
+               // .onAppear {
+//            SpeechManager.shared.speak(step.description)
+//        }
 
     }
 }
@@ -174,10 +179,10 @@ struct StepCardContent: View {
 struct BrushingTeethCardsView: View {
 
     let steps: [StepModel] = [
-        StepModel(Icon: "brush", title: "Brushing Teeth", description: "Apply toothapste \non their toothbrush.", imageName: "BT1", color: .bluey),
-        StepModel(Icon: "brush",title: "Brushing Teeth", description: "Children brush their teeth gently.", imageName: "brushing2", color: .bluey),
-        StepModel(Icon: "brush", title: "Brushing Teeth", description: "Children rinse their mouths after brushing their teeth..", imageName: "brushing3", color: .bluey),
-        StepModel(Icon: " ", title: "Good Job", description: " ", imageName: "GJ", color: .bluey),
+        StepModel(Icon: "brush", title: "Brushing Teeth", description: "Apply toothapste \non their toothbrush.", imageName: "BT1", color: .bluey ,audioF: "BTV2.mp3"),
+        StepModel(Icon: "brush",title: "Brushing Teeth", description: "Children brush their teeth gently.", imageName: "brushing2", color: .bluey,audioF: "BTV2.mp3"),
+        StepModel(Icon: "brush", title: "Brushing Teeth", description: "Children rinse their mouths after brushing their teeth..", imageName: "brushing3", color: .bluey,audioF: "BTV2.mp3"),
+        StepModel(Icon: " ", title: "Good Job", description: " ", imageName: "GJ", color: .bluey,audioF: "BTV2.mp3"),
     ]
 
     var body: some View {
@@ -194,10 +199,10 @@ struct BrushingTeethCardsView: View {
 struct EatingFoodCardsView: View {
     
     let steps: [StepModel] = [
-        StepModel(Icon: "apple", title: "Eating food", description: "When we feel hungry, we listen to our tummy and know it’s time to eat.", imageName: "EatingFood1", color: .orangy),
-        StepModel(Icon: "apple",title: "Eating food", description: "We sit at the table, choose our food, and take small bites to help our body feel good", imageName: "EatingFood2", color: .orangy),
-        StepModel(Icon: "apple", title: "Eating food", description: "After we eat, our tummy feels happy and full, and we have energy to play and learn.", imageName: "EatingFood3", color: .orangy),
-        StepModel(Icon: " ", title: "Good Job", description: " ", imageName: "GJ", color: .orangy),
+        StepModel(Icon: "apple", title: "Eating food", description: "When we feel hungry, we listen to our tummy and know it’s time to eat.", imageName: "EatingFood1", color: .orangy,audioF: "EF1.mp3"),
+        StepModel(Icon: "apple",title: "Eating food", description: "We sit at the table, choose our food, and take small bites to help our body feel good", imageName: "EatingFood2", color: .orangy,audioF: "EF2.mp3"),
+        StepModel(Icon: "apple", title: "Eating food", description: "After we eat, our tummy feels happy and full, and we have energy to play and learn.", imageName: "EatingFood3", color: .orangy,audioF: "EF3.mp3"),
+        StepModel(Icon: " ", title: "Good Job", description: " ", imageName: "GJ", color: .orangy,audioF: "GJ.mp3"),
     ]
     
     var body: some View {

@@ -12,4 +12,6 @@ struct StepModel {
     let description: String
     let imageName: String
     let color: Color
+    //--------
+    let audioF: String?
 }

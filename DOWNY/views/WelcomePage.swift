@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct WelcomePage: View {
     @State private var isActive: Bool = false
@@ -39,9 +40,13 @@ struct WelcomePage: View {
                         .background(Color.blue)
                         .cornerRadius(10)
                 }
-            }.background(
+            }
+            .background(
                 backgroundImage()
             )
+            .onAppear {
+                configureAudioSession()
+            }
             .navigationDestination(isPresented: $isActive) {
                 BoardPage()
             }
@@ -49,7 +54,15 @@ struct WelcomePage: View {
     }
 }
 
-
+private func configureAudioSession() {
+    do {
+        // Playback يسمح بالتشغيل حتى في الخلفية إذا فعّلت الخلفية لاحقًا
+        try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
+        try AVAudioSession.sharedInstance().setActive(true)
+    } catch {
+        print("⚠️ Audio session setup error: \(error)")
+    }
+}
 
 struct backgroundImage: View {
     var body: some View {
