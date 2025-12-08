@@ -57,18 +57,21 @@ public struct Cards: View {
         let currentIndex: Int
         let totalSteps: Int
         let onNext: () -> Void
+        let onPlaySound: () -> Void
         
         init(
             color: Color,
             currentIndex: Int,
             totalSteps: Int,
             onNext: @escaping () -> Void,
+            onPlaySound: @escaping () -> Void,
             @ViewBuilder content: () -> Content
         ) {
             self.color = color
             self.currentIndex = currentIndex
             self.totalSteps = totalSteps
             self.onNext = onNext
+            self.onPlaySound = onPlaySound
             self.content = content()
         }
         
@@ -111,7 +114,10 @@ public struct Cards: View {
         }
         
         private var playButton: some View {
-            Button(action: onNext) {
+            Button(action: {
+                 onNext()
+                 onPlaySound()
+             }){
                 HStack {
                     Image(systemName: "play.fill")
                     Spacer().frame(width: 33)
@@ -134,15 +140,29 @@ public struct Cards: View {
         let content: (StepModel) -> Content
         
         @State private var currentIndex = 0
+        @State private var firstStepPlayed = false 
         
         var body: some View {
             StepCard(
                 color: steps[currentIndex].color,
                 currentIndex: currentIndex,
                 totalSteps: steps.count,
-                onNext: next
+                onNext: next,
+                onPlaySound: playCurrentSound
             ) {
                 content(steps[currentIndex])
+            }
+            .onAppear {
+                playFirstStepSound()
+            }
+        }
+        
+        private func playFirstStepSound() {
+            guard !firstStepPlayed else { return }
+            firstStepPlayed = true
+            
+            if let audio = steps.first?.audioF {
+                AudioPlayerManager.shared.playSound(named: audio)
             }
         }
         
@@ -151,7 +171,15 @@ public struct Cards: View {
                 currentIndex += 1
             }
         }
+        
+        private func playCurrentSound() {
+            if let audio = steps[currentIndex].audioF {
+                AudioPlayerManager.shared.playSound(named: audio)
+            }
+        }
     }
+
+
     
     
     
@@ -176,14 +204,8 @@ public struct Cards: View {
                     .resizable()
                     .frame(width: 349, height: 334)
                 
-            }.onAppear {
-                if let audio = step.audioF {
-                    AudioPlayerManager.shared.playSound(named: audio)
-                }
             }
-            // .onAppear {
-            //            SpeechManager.shared.speak(step.description)
-            //        }
+    
             
         }
     }
@@ -197,8 +219,8 @@ public struct Cards: View {
         let steps: [StepModel] = [
             StepModel(Icon: "brush", title:String(localized: "Brushing Teeth"), description: String(localized:"Children apply toothapste on their toothbrush."), imageName: "BT1", color: .babyYellow ,audioF: "BTV2.mp3"),
             StepModel(Icon: "brush",title:String(localized: "Brushing Teeth"), description:String(localized: "Children brush their teeth gently."), imageName: "BT2", color: .babyYellow,audioF: "BTV2.mp3"),
-            StepModel(Icon: "brush", title:String(localized: "Brushing Teeth"), description: String(localized:"Children rinse their mouths after brushing their teeth."), imageName: "BT3", color: .babyYellow,audioF: "BTV2.mp3"),
-            StepModel(Icon: " ", title: String(localized:"Good Job"), description: " ", imageName: "GJ", color: .babyYellow,audioF: "BTV2.mp3"),
+            StepModel(Icon: "brush", title:String(localized: "Brushing Teeth"), description: String(localized:"Children rinse their mouths after brushing their teeth.."), imageName: "BT3", color: .babyYellow,audioF: "BTV2.mp3"),
+            StepModel(Icon: " ", title: String(localized:"Good Job"), description: " ", imageName: "GJ", color: .babyYellow,audioF: "clap.mp3"),
         ]
         
         var body: some View {
