@@ -56,7 +56,7 @@ struct AllCards: View {
                         CardContent( 
                             imageName: "kind",
                             title: String(localized:"Being Kind"),
-                            description:String(localized: "Children should be kind to others and treat them very well.")
+                            description:String(localized: "Children should be kind to others and treat them very well")
                         )
                     }
                 }.buttonStyle(PlainButtonStyle())
@@ -93,7 +93,7 @@ struct AllCards: View {
                         CardContent(
                             imageName: "Shower",
                             title: String(localized:"Taking Shower"),
-                            description: String(localized:"When children get dirty they take shower in order to be clean..")
+                            description: String(localized:"When children get dirty they take shower in order to be clean.")
                         )}}.buttonStyle(PlainButtonStyle())
                 
                 Button(action: {
@@ -103,7 +103,7 @@ struct AllCards: View {
                         CardContent(
                             imageName: "Screen",
                             title: String(localized:"Screen Time"),
-                            description: String(localized:"When children get dirty they take shower in order to be clean..")
+                            description: String(localized:"When we use screen for way too long our eyes and brains get tired.")
                         )}}.buttonStyle(PlainButtonStyle())
                 
                 Button(action: {
@@ -113,7 +113,7 @@ struct AllCards: View {
                         CardContent(
                             imageName: "Washing",
                             title: String(localized:"Washing Hands"),
-                            description: String(localized:"When children get dirty they take shower in order to be clean..")
+                            description: String(localized:"Children wash their hands before and after eating a meal.")
                         )}}.buttonStyle(PlainButtonStyle())
                 
                 Button(action: {
@@ -123,7 +123,7 @@ struct AllCards: View {
                         CardContent(
                             imageName: "Sleep",
                             title:String(localized: "Sleep Early"),
-                            description: String(localized:"When children get dirty they take shower in order to be clean..")
+                            description: String(localized:"children need enough sleep time to grow strong and healthy .")
                         )}}.buttonStyle(PlainButtonStyle())
                 
                 
