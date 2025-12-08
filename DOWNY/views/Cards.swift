@@ -195,10 +195,10 @@ public struct Cards: View {
     struct BrushingTeethCardsView: View {
         
         let steps: [StepModel] = [
-            StepModel(Icon: "brush", title: "Brushing Teeth", description: "Apply toothapste \non their toothbrush.", imageName: "BT1", color: .babyYellow ,audioF: "BTV2.mp3"),
-            StepModel(Icon: "brush",title: "Brushing Teeth", description: "Children brush their teeth gently.", imageName: "BT2", color: .babyYellow,audioF: "BTV2.mp3"),
-            StepModel(Icon: "brush", title: "Brushing Teeth", description: "Children rinse their mouths after brushing their teeth..", imageName: "BT3", color: .babyYellow,audioF: "BTV2.mp3"),
-            StepModel(Icon: " ", title: "Good Job", description: " ", imageName: "GJ", color: .babyYellow,audioF: "BTV2.mp3"),
+            StepModel(Icon: "brush", title:String(localized: "Brushing Teeth"), description: String(localized:"Apply toothapste \non their toothbrush."), imageName: "BT1", color: .babyYellow ,audioF: "BTV2.mp3"),
+            StepModel(Icon: "brush",title:String(localized: "Brushing Teeth"), description:String(localized: "Children brush their teeth gently."), imageName: "BT2", color: .babyYellow,audioF: "BTV2.mp3"),
+            StepModel(Icon: "brush", title:String(localized: "Brushing Teeth"), description: String(localized:"Children rinse their mouths after brushing their teeth.."), imageName: "BT3", color: .babyYellow,audioF: "BTV2.mp3"),
+            StepModel(Icon: " ", title: String(localized:"Good Job"), description: " ", imageName: "GJ", color: .babyYellow,audioF: "BTV2.mp3"),
         ]
         
         var body: some View {
@@ -215,10 +215,10 @@ public struct Cards: View {
     struct EatingFoodCardsView: View {
         
         let steps: [StepModel] = [
-            StepModel(Icon: "apple", title: "Eating food", description: "When we feel hungry, we listen to our tummy and know it’s time to eat.", imageName: "EF1", color: .babyBlue,audioF: "EF1.mp3"),
-            StepModel(Icon: "apple",title: "Eating food", description: "We sit at the table, choose our food, and take small bites to help our body feel good", imageName: "EF2", color: .babyBlue,audioF: "EF2.mp3"),
-            StepModel(Icon: "apple", title: "Eating food", description: "After we eat, our tummy feels happy and full, and we have energy to play and learn.", imageName: "EF3", color: .babyBlue,audioF: "EF3.mp3"),
-            StepModel(Icon: " ", title: "Good Job", description: " ", imageName: "GJ", color: .babyBlue,audioF: "GJ.mp3"),
+            StepModel(Icon: "apple", title: String(localized:"Eating food"), description: String(localized:"When we feel hungry, we listen to our tummy and know it’s time to eat."), imageName: "EF1", color: .babyBlue,audioF: "EF1.mp3"),
+            StepModel(Icon: "apple",title:String(localized: "Eating food"), description: String(localized:"We sit at the table, choose our food, and take small bites to help our body feel good"), imageName: "EF2", color: .babyBlue,audioF: "EF2.mp3"),
+            StepModel(Icon: "apple", title:String(localized: "Eating food"), description:String(localized: "After we eat, our tummy feels happy and full, and we have energy to play and learn."), imageName: "EF3", color: .babyBlue,audioF: "EF3.mp3"),
+            StepModel(Icon: " ", title:String(localized: "Good Job"), description: " ", imageName: "GJ", color: .babyBlue,audioF: "GJ.mp3"),
         ]
         
         var body: some View {
@@ -232,10 +232,10 @@ public struct Cards: View {
     struct BeingKindCardsView: View {
         
         let steps: [StepModel] = [
-            StepModel(Icon: "", title: "Being Kind", description: "When we meet our friends or family , we greet \nthem with a smile", imageName: "BK1", color: .babyYellow,audioF: "EF1.mp3"),
-            StepModel(Icon: "",title: "Being Kind", description: "We share, help, and use kind words because it makes everyone feel safe and happy", imageName: "BK2", color: .babyYellow,audioF: "EF2.mp3"),
-            StepModel(Icon: "", title: "Being Kind", description: "Giving gifts makes our heart feels warm,\n and the people around us feel good too.", imageName: "BK3", color: .babyYellow,audioF: "EF3.mp3"),
-            StepModel(Icon: " ", title: "Good Job", description: " ", imageName: "GJ", color: .babyYellow,audioF: "GJ.mp3"),
+            StepModel(Icon: "", title: String(localized:"Being Kind"), description:String(localized: "When we meet our friends or family , we greet \nthem with a smile"), imageName: "BK1", color: .babyYellow,audioF: "EF1.mp3"),
+            StepModel(Icon: "",title: String(localized:"Being Kind"), description: String(localized:"We share, help, and use kind words because it makes everyone feel safe and happy"), imageName: "BK2", color: .babyYellow,audioF: "EF2.mp3"),
+            StepModel(Icon: "", title:String(localized: "Being Kind"), description:String(localized: "Giving gifts makes our heart feels warm,\n and the people around us feel good too."), imageName: "BK3", color: .babyYellow,audioF: "EF3.mp3"),
+            StepModel(Icon: " ", title: String(localized:"Good Job"), description: " ", imageName: "GJ", color: .babyYellow,audioF: "GJ.mp3"),
         ]
         
         var body: some View {
@@ -249,11 +249,11 @@ public struct Cards: View {
     struct BrushingHairCardsView: View {
         
         let steps: [StepModel] = [
-            StepModel(Icon: "", title: "Combing hair", description: "Children brush their hair gently to \nremove the small tangles", imageName: "CH1", color: .babyBlue,audioF: "EF1.mp3"),
-            StepModel(Icon: "",title: "Combing hair", description: "Then, they comb their hair slowly to \nmake it smooth and tidy."
+            StepModel(Icon: "", title: String(localized:"Combing hair"), description: String(localized:"Children brush their hair gently to \nremove the small tangles"), imageName: "CH1", color: .babyBlue,audioF: "EF1.mp3"),
+            StepModel(Icon: "",title: "Combing hair", description: String(localized:"Then, they comb their hair slowly to \nmake it smooth and tidy.")
                       , imageName: "CH2", color: .babyBlue,audioF: "EF2.mp3"),
-            StepModel(Icon: "", title: "Combing hair", description: "Finally, they fix their hair so it looks \nneat before they go out.", imageName: "CH3", color: .babyBlue,audioF: "EF3.mp3"),
-            StepModel(Icon: " ", title: "Good Job", description: " ", imageName: "GJ", color: .babyBlue,audioF: "GJ.mp3"),
+            StepModel(Icon: "", title: String(localized:"Combing hair"), description: String(localized:"Finally, they fix their hair so it looks \nneat before they go out."), imageName: "CH3", color: .babyBlue,audioF: "EF3.mp3"),
+            StepModel(Icon: " ", title: String(localized:"Good Job"), description: " ", imageName: "GJ", color: .babyBlue,audioF: "GJ.mp3"),
         ]
         
         var body: some View {
@@ -267,11 +267,11 @@ public struct Cards: View {
     struct TakingShowerCardsView: View {
         
         let steps: [StepModel] = [
-            StepModel(Icon: "", title: "Taking Shower", description: "When children get dirty they take shower in order to be clean.", imageName: "TS1", color: .babyBlue,audioF: "EF1.mp3"),
-            StepModel(Icon: "",title: "Taking Shower", description: "Children use shampoo and a warm water to clean themselves."
+            StepModel(Icon: "", title: String(localized:"Taking Shower"), description: String(localized:"When children get dirty they take shower in order to be clean."), imageName: "TS1", color: .babyBlue,audioF: "EF1.mp3"),
+            StepModel(Icon: "",title:String(localized: "Taking Shower"), description:String(localized: "Children use shampoo and a warm water to clean themselves.")
                       , imageName: "TS2", color: .babyBlue,audioF: "EF2.mp3"),
-            StepModel(Icon: "", title: "Taking Shower", description: "Children dry themselves thoroughly with a clean towel and wear a clean clothes after.", imageName: "TS3", color: .babyBlue,audioF: "EF3.mp3"),
-            StepModel(Icon: " ", title: "Good Job", description: " ", imageName: "GJ", color: .babyBlue,audioF: "GJ.mp3"),
+            StepModel(Icon: "", title: String(localized:"Taking Shower"), description: String(localized:"Children dry themselves thoroughly with a clean towel and wear a clean clothes after."), imageName: "TS3", color: .babyBlue,audioF: "EF3.mp3"),
+            StepModel(Icon: " ", title: String(localized:"Good Job"), description: " ", imageName: "GJ", color: .babyBlue,audioF: "GJ.mp3"),
         ]
         
         var body: some View {

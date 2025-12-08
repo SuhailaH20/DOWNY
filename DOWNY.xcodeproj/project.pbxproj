@@ -29,6 +29,23 @@
 		D89EA1152ED4891400E08F0F /* DOWNYUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DOWNYUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		81EA927C2EE6D31E00072079 /* Exceptions for "DOWNY" folder in "DOWNYTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				views/Localizable.xcstrings,
+			);
+			target = D89EA10A2ED4891400E08F0F /* DOWNYTests */;
+		};
+		81EA927D2EE6D31E00072079 /* Exceptions for "DOWNY" folder in "DOWNYUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				views/Localizable.xcstrings,
+			);
+			target = D89EA1142ED4891400E08F0F /* DOWNYUITests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		81254FBF2EE5C203009EE784 /* Voice */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
@@ -37,6 +54,10 @@
 		};
 		D89EA1002ED4891300E08F0F /* DOWNY */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				81EA927C2EE6D31E00072079 /* Exceptions for "DOWNY" folder in "DOWNYTests" target */,
+				81EA927D2EE6D31E00072079 /* Exceptions for "DOWNY" folder in "DOWNYUITests" target */,
+			);
 			path = DOWNY;
 			sourceTree = "<group>";
 		};
@@ -199,6 +220,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = D89EA0F52ED4891300E08F0F;
 			minimizedProjectReferenceProxies = 1;
@@ -335,6 +357,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -391,6 +414,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
