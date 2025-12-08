@@ -16,19 +16,15 @@ struct WelcomePage: View {
         NavigationStack {
             
             VStack(alignment: .center) {
-                Image("rainbow")
-                    .resizable()
-                    .frame(width: 1150, height: 87.23)
-                Spacer().frame(height: 160)
-                
+
                 Image("logo")
                     .resizable()
-                    .frame(width: 559, height: 197)
+                    .frame(width: 650, height: 360)
                 Spacer().frame(height: 20)
                 
                 Image("welcome")
                     .resizable()
-                    .frame(width: 339, height: 312)
+                    .frame(width: 250, height: 260)
                 Spacer().frame(height: 90)
                 
                 Button(action: {
@@ -36,10 +32,10 @@ struct WelcomePage: View {
                 }) {
                     Text("Get Started")
                         .font(.largeTitle)
-                        .foregroundColor(.white)
+                        .foregroundColor(.black)
                         .padding()
-                        .frame(width: 200, height: 50)
-                        .background(Color.blue)
+                        .frame(width: 257, height: 92)
+                        .background(Color.babyBlue)
                         .cornerRadius(10)
                 }
             }
