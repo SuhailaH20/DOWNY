@@ -16,9 +16,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D89EA0FD2ED4891300E08F0F"
-               BuildableName = "DOWNY.app"
-               BlueprintName = "DOWNY"
-               ReferencedContainer = "container:DOWNY.xcodeproj">
+               BuildableName = "BLOOM.app"
+               BlueprintName = "BLOOM"
+               ReferencedContainer = "container:BLOOM.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -36,9 +36,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D89EA10A2ED4891400E08F0F"
-               BuildableName = "DOWNYTests.xctest"
-               BlueprintName = "DOWNYTests"
-               ReferencedContainer = "container:DOWNY.xcodeproj">
+               BuildableName = "BLOOMTests.xctest"
+               BlueprintName = "BLOOMTests"
+               ReferencedContainer = "container:BLOOM.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D89EA1142ED4891400E08F0F"
-               BuildableName = "DOWNYUITests.xctest"
-               BlueprintName = "DOWNYUITests"
-               ReferencedContainer = "container:DOWNY.xcodeproj">
+               BuildableName = "BLOOMUITests.xctest"
+               BlueprintName = "BLOOMUITests"
+               ReferencedContainer = "container:BLOOM.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -70,9 +70,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D89EA0FD2ED4891300E08F0F"
-            BuildableName = "DOWNY.app"
-            BlueprintName = "DOWNY"
-            ReferencedContainer = "container:DOWNY.xcodeproj">
+            BuildableName = "BLOOM.app"
+            BlueprintName = "BLOOM"
+            ReferencedContainer = "container:BLOOM.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -87,9 +87,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D89EA0FD2ED4891300E08F0F"
-            BuildableName = "DOWNY.app"
-            BlueprintName = "DOWNY"
-            ReferencedContainer = "container:DOWNY.xcodeproj">
+            BuildableName = "BLOOM.app"
+            BlueprintName = "BLOOM"
+            ReferencedContainer = "container:BLOOM.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

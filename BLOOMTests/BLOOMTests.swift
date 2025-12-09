@@ -6,7 +6,7 @@
 //
 
 import Testing
-@testable import DOWNY
+@testable import BLOOM
 
 struct DOWNYTests {
 

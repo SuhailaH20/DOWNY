@@ -29,7 +29,7 @@ struct BoardPage: View {
         }
     }
 }
-//////////
+
 
 struct AllCards: View {
     @Binding var selectedCard: String?

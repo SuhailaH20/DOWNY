@@ -24,25 +24,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D89EA0FE2ED4891300E08F0F /* DOWNY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DOWNY.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D89EA10B2ED4891400E08F0F /* DOWNYTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DOWNYTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D89EA1152ED4891400E08F0F /* DOWNYUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DOWNYUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D89EA0FE2ED4891300E08F0F /* BLOOM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLOOM.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D89EA10B2ED4891400E08F0F /* BLOOMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BLOOMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D89EA1152ED4891400E08F0F /* BLOOMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BLOOMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		81EA927C2EE6D31E00072079 /* Exceptions for "DOWNY" folder in "DOWNYTests" target */ = {
+		81EA927C2EE6D31E00072079 /* Exceptions for "BLOOM" folder in "BLOOMTests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				views/Localizable.xcstrings,
 			);
-			target = D89EA10A2ED4891400E08F0F /* DOWNYTests */;
+			target = D89EA10A2ED4891400E08F0F /* BLOOMTests */;
 		};
-		81EA927D2EE6D31E00072079 /* Exceptions for "DOWNY" folder in "DOWNYUITests" target */ = {
+		81EA927D2EE6D31E00072079 /* Exceptions for "BLOOM" folder in "BLOOMUITests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				views/Localizable.xcstrings,
 			);
-			target = D89EA1142ED4891400E08F0F /* DOWNYUITests */;
+			target = D89EA1142ED4891400E08F0F /* BLOOMUITests */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -52,23 +52,23 @@
 			path = Voice;
 			sourceTree = "<group>";
 		};
-		D89EA1002ED4891300E08F0F /* DOWNY */ = {
+		D89EA1002ED4891300E08F0F /* BLOOM */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				81EA927C2EE6D31E00072079 /* Exceptions for "DOWNY" folder in "DOWNYTests" target */,
-				81EA927D2EE6D31E00072079 /* Exceptions for "DOWNY" folder in "DOWNYUITests" target */,
+				81EA927C2EE6D31E00072079 /* Exceptions for "BLOOM" folder in "BLOOMTests" target */,
+				81EA927D2EE6D31E00072079 /* Exceptions for "BLOOM" folder in "BLOOMUITests" target */,
 			);
-			path = DOWNY;
+			path = BLOOM;
 			sourceTree = "<group>";
 		};
-		D89EA10E2ED4891400E08F0F /* DOWNYTests */ = {
+		D89EA10E2ED4891400E08F0F /* BLOOMTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = DOWNYTests;
+			path = BLOOMTests;
 			sourceTree = "<group>";
 		};
-		D89EA1182ED4891400E08F0F /* DOWNYUITests */ = {
+		D89EA1182ED4891400E08F0F /* BLOOMUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = DOWNYUITests;
+			path = BLOOMUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -102,9 +102,9 @@
 			isa = PBXGroup;
 			children = (
 				81254FBF2EE5C203009EE784 /* Voice */,
-				D89EA1002ED4891300E08F0F /* DOWNY */,
-				D89EA10E2ED4891400E08F0F /* DOWNYTests */,
-				D89EA1182ED4891400E08F0F /* DOWNYUITests */,
+				D89EA1002ED4891300E08F0F /* BLOOM */,
+				D89EA10E2ED4891400E08F0F /* BLOOMTests */,
+				D89EA1182ED4891400E08F0F /* BLOOMUITests */,
 				D89EA0FF2ED4891300E08F0F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -112,9 +112,9 @@
 		D89EA0FF2ED4891300E08F0F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D89EA0FE2ED4891300E08F0F /* DOWNY.app */,
-				D89EA10B2ED4891400E08F0F /* DOWNYTests.xctest */,
-				D89EA1152ED4891400E08F0F /* DOWNYUITests.xctest */,
+				D89EA0FE2ED4891300E08F0F /* BLOOM.app */,
+				D89EA10B2ED4891400E08F0F /* BLOOMTests.xctest */,
+				D89EA1152ED4891400E08F0F /* BLOOMUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -122,9 +122,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D89EA0FD2ED4891300E08F0F /* DOWNY */ = {
+		D89EA0FD2ED4891300E08F0F /* BLOOM */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D89EA11F2ED4891400E08F0F /* Build configuration list for PBXNativeTarget "DOWNY" */;
+			buildConfigurationList = D89EA11F2ED4891400E08F0F /* Build configuration list for PBXNativeTarget "BLOOM" */;
 			buildPhases = (
 				D89EA0FA2ED4891300E08F0F /* Sources */,
 				D89EA0FB2ED4891300E08F0F /* Frameworks */,
@@ -136,18 +136,18 @@
 			);
 			fileSystemSynchronizedGroups = (
 				81254FBF2EE5C203009EE784 /* Voice */,
-				D89EA1002ED4891300E08F0F /* DOWNY */,
+				D89EA1002ED4891300E08F0F /* BLOOM */,
 			);
-			name = DOWNY;
+			name = BLOOM;
 			packageProductDependencies = (
 			);
 			productName = DOWNY;
-			productReference = D89EA0FE2ED4891300E08F0F /* DOWNY.app */;
+			productReference = D89EA0FE2ED4891300E08F0F /* BLOOM.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D89EA10A2ED4891400E08F0F /* DOWNYTests */ = {
+		D89EA10A2ED4891400E08F0F /* BLOOMTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D89EA1222ED4891400E08F0F /* Build configuration list for PBXNativeTarget "DOWNYTests" */;
+			buildConfigurationList = D89EA1222ED4891400E08F0F /* Build configuration list for PBXNativeTarget "BLOOMTests" */;
 			buildPhases = (
 				D89EA1072ED4891400E08F0F /* Sources */,
 				D89EA1082ED4891400E08F0F /* Frameworks */,
@@ -159,18 +159,18 @@
 				D89EA10D2ED4891400E08F0F /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				D89EA10E2ED4891400E08F0F /* DOWNYTests */,
+				D89EA10E2ED4891400E08F0F /* BLOOMTests */,
 			);
-			name = DOWNYTests;
+			name = BLOOMTests;
 			packageProductDependencies = (
 			);
 			productName = DOWNYTests;
-			productReference = D89EA10B2ED4891400E08F0F /* DOWNYTests.xctest */;
+			productReference = D89EA10B2ED4891400E08F0F /* BLOOMTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		D89EA1142ED4891400E08F0F /* DOWNYUITests */ = {
+		D89EA1142ED4891400E08F0F /* BLOOMUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D89EA1252ED4891400E08F0F /* Build configuration list for PBXNativeTarget "DOWNYUITests" */;
+			buildConfigurationList = D89EA1252ED4891400E08F0F /* Build configuration list for PBXNativeTarget "BLOOMUITests" */;
 			buildPhases = (
 				D89EA1112ED4891400E08F0F /* Sources */,
 				D89EA1122ED4891400E08F0F /* Frameworks */,
@@ -182,13 +182,13 @@
 				D89EA1172ED4891400E08F0F /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				D89EA1182ED4891400E08F0F /* DOWNYUITests */,
+				D89EA1182ED4891400E08F0F /* BLOOMUITests */,
 			);
-			name = DOWNYUITests;
+			name = BLOOMUITests;
 			packageProductDependencies = (
 			);
 			productName = DOWNYUITests;
-			productReference = D89EA1152ED4891400E08F0F /* DOWNYUITests.xctest */;
+			productReference = D89EA1152ED4891400E08F0F /* BLOOMUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -214,7 +214,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D89EA0F92ED4891300E08F0F /* Build configuration list for PBXProject "DOWNY" */;
+			buildConfigurationList = D89EA0F92ED4891300E08F0F /* Build configuration list for PBXProject "BLOOM" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -229,9 +229,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D89EA0FD2ED4891300E08F0F /* DOWNY */,
-				D89EA10A2ED4891400E08F0F /* DOWNYTests */,
-				D89EA1142ED4891400E08F0F /* DOWNYUITests */,
+				D89EA0FD2ED4891300E08F0F /* BLOOM */,
+				D89EA10A2ED4891400E08F0F /* BLOOMTests */,
+				D89EA1142ED4891400E08F0F /* BLOOMUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -287,12 +287,12 @@
 /* Begin PBXTargetDependency section */
 		D89EA10D2ED4891400E08F0F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D89EA0FD2ED4891300E08F0F /* DOWNY */;
+			target = D89EA0FD2ED4891300E08F0F /* BLOOM */;
 			targetProxy = D89EA10C2ED4891400E08F0F /* PBXContainerItemProxy */;
 		};
 		D89EA1172ED4891400E08F0F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D89EA0FD2ED4891300E08F0F /* DOWNY */;
+			target = D89EA0FD2ED4891300E08F0F /* BLOOM */;
 			targetProxy = D89EA1162ED4891400E08F0F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -500,7 +500,7 @@
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DOWNY.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DOWNY";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BLOOM.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BLOOM";
 			};
 			name = Debug;
 		};
@@ -521,7 +521,7 @@
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DOWNY.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DOWNY";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BLOOM.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BLOOM";
 			};
 			name = Release;
 		};
@@ -566,7 +566,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D89EA0F92ED4891300E08F0F /* Build configuration list for PBXProject "DOWNY" */ = {
+		D89EA0F92ED4891300E08F0F /* Build configuration list for PBXProject "BLOOM" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D89EA11D2ED4891400E08F0F /* Debug */,
@@ -575,7 +575,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D89EA11F2ED4891400E08F0F /* Build configuration list for PBXNativeTarget "DOWNY" */ = {
+		D89EA11F2ED4891400E08F0F /* Build configuration list for PBXNativeTarget "BLOOM" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D89EA1202ED4891400E08F0F /* Debug */,
@@ -584,7 +584,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D89EA1222ED4891400E08F0F /* Build configuration list for PBXNativeTarget "DOWNYTests" */ = {
+		D89EA1222ED4891400E08F0F /* Build configuration list for PBXNativeTarget "BLOOMTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D89EA1232ED4891400E08F0F /* Debug */,
@@ -593,7 +593,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D89EA1252ED4891400E08F0F /* Build configuration list for PBXNativeTarget "DOWNYUITests" */ = {
+		D89EA1252ED4891400E08F0F /* Build configuration list for PBXNativeTarget "BLOOMUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D89EA1262ED4891400E08F0F /* Debug */,
