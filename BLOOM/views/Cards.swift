@@ -338,21 +338,54 @@ public struct Cards: View {
     
     struct BrushingHairCardsView: View {
         
-        let steps: [StepModel] = [
-            StepModel(Icon: "", title: String(localized:"Combing hair"), description: String(localized:"Children brush their hair gently to remove the small tangles"), imageName: "CH1", color: .babyBlue,audioF: "EF1.mp3"),
-            StepModel(Icon: "",title:String(localized: "Combing hair"), description: String(localized:"Then, they comb their hair slowly to make it smooth and tidy.")
-                      , imageName: "CH2", color: .babyBlue,audioF: "EF2.mp3"),
-            StepModel(Icon: "", title: String(localized:"Combing hair"), description: String(localized:"Finally, they fix their hair so it looks neat before they go out."), imageName: "CH3", color: .babyBlue,audioF: "EF3.mp3"),
-            StepModel(Icon: " ", title: String(localized:"Good Job"), description: " ", imageName: "GJ", color: .babyBlue,audioF: "GJ.mp3"),
-        ]
+        private var isArabic: Bool {
+            Locale.current.language.languageCode?.identifier == "ar"
+        }
+        
+        var steps: [StepModel] {
+            [
+                StepModel(
+                    Icon: "",
+                    title: String(localized: "Combing hair"),
+                    description: String(localized: "Children brush their hair gently to remove the small tangles"),
+                    imageName: "CH1",
+                    color: .babyBlue,
+                    audioF: isArabic ? "CombingHairAR1.mp3" : "CombingHair1.mp3"
+                ),
+                StepModel(
+                    Icon: "",
+                    title: String(localized: "Combing hair"),
+                    description: String(localized: "Then, they comb their hair slowly to make it smooth and tidy."),
+                    imageName: "CH2",
+                    color: .babyBlue,
+                    audioF: isArabic ? "CombingHairAR2.mp3" : "CombingHair2.mp3"
+                ),
+                StepModel(
+                    Icon: "",
+                    title: String(localized: "Combing hair"),
+                    description: String(localized: "Finally, they fix their hair so it looks neat before they go out."),
+                    imageName: "CH3",
+                    color: .babyBlue,
+                    audioF: isArabic ? "CombingHairAR3.mp3" : "CombingHair3.mp3"
+                ),
+                StepModel(
+                    Icon: " ",
+                    title: String(localized: "Good Job"),
+                    description: " ",
+                    imageName: "GJ",
+                    color: .babyBlue,
+                    audioF: "clap.mp3"
+                )
+            ]
+        }
         
         var body: some View {
             StepFlow(steps: steps) { step in
                 StepCardContent(step: step)
             }
-            
         }
     }
+
     
     struct TakingShowerCardsView: View {
         
