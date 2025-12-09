@@ -9,6 +9,10 @@ import SwiftUI
 import AVFoundation
 
 struct WelcomePage: View {
+    private var isArabic: Bool {
+        Locale.current.language.languageCode?.identifier == "ar"
+    }
+    
     @State private var isActive: Bool = false
     
     var body: some View {
@@ -17,7 +21,7 @@ struct WelcomePage: View {
             
             VStack(alignment: .center) {
 
-                Image("logo")
+                Image(isArabic ? "logoAR" : "logo")
                     .resizable()
                     .frame(width: 650, height: 360)
                 Spacer().frame(height: 20)
