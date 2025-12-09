@@ -269,20 +269,54 @@ public struct Cards: View {
     
     struct EatingFoodCardsView: View {
         
-        let steps: [StepModel] = [
-            StepModel(Icon: "apple", title: String(localized:"Eating food"), description: String(localized:"When we feel hungry, we listen to our tummy and know it’s time to eat."), imageName: "EF1", color: .babyBlue,audioF: "EF1.mp3"),
-            StepModel(Icon: "apple",title:String(localized: "Eating food"), description: String(localized:"We sit at the table, choose our food, and take small bites to help our body feel good"), imageName: "EF2", color: .babyBlue,audioF: "EF2.mp3"),
-            StepModel(Icon: "apple", title:String(localized: "Eating food"), description:String(localized: "After we eat, our tummy feels happy and full, and we have energy to play and learn."), imageName: "EF3", color: .babyBlue,audioF: "EF3.mp3"),
-            StepModel(Icon: " ", title:String(localized: "Good Job"), description: " ", imageName: "GJ", color: .babyBlue,audioF: "GJ.mp3"),
-        ]
+        private var isArabic: Bool {
+            Locale.current.language.languageCode?.identifier == "ar"
+        }
+        
+        var steps: [StepModel] {
+            [
+                StepModel(
+                    Icon: "apple",
+                    title: String(localized: "Eating food"),
+                    description: String(localized: "When we feel hungry, we listen to our tummy and know it’s time to eat."),
+                    imageName: "EF1",
+                    color: .babyBlue,
+                    audioF: isArabic ? "EatingFoodAR1.mp3" : "EatingFood1.mp3"
+                ),
+                StepModel(
+                    Icon: "apple",
+                    title: String(localized: "Eating food"),
+                    description: String(localized: "We sit at the table, choose our food, and take small bites to help our body feel good"),
+                    imageName: "EF2",
+                    color: .babyBlue,
+                    audioF: isArabic ? "EatingFoodAR2.mp3" : "EatingFood2.mp3"
+                ),
+                StepModel(
+                    Icon: "apple",
+                    title: String(localized: "Eating food"),
+                    description: String(localized: "After we eat, our tummy feels happy and full, and we have energy to play and learn."),
+                    imageName: "EF3",
+                    color: .babyBlue,
+                    audioF: isArabic ? "EatingFoodAR3.mp3" : "EatingFood3.mp3"
+                ),
+                StepModel(
+                    Icon: " ",
+                    title: String(localized: "Good Job"),
+                    description: " ",
+                    imageName: "GJ",
+                    color: .babyBlue,
+                    audioF: "clap.mp3"
+                )
+            ]
+        }
         
         var body: some View {
             StepFlow(steps: steps) { step in
                 StepCardContent(step: step)
             }
-            
         }
     }
+
     
     struct BeingKindCardsView: View {
 
