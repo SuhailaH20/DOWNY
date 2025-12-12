@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct DOWNYApp: App {
+struct BLOOMApp: App {
     var body: some Scene {
         WindowGroup {
             WelcomePage()

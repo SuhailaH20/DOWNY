@@ -9,23 +9,50 @@ import SwiftUI
 
 struct BoardPage: View {
     @State private var selectedCard: String? = nil
+    @State private var showMiniGame = false
+    
     
     var body: some View {
         if selectedCard != nil {
             Cards(selectedCard: $selectedCard)
         } else {
-            VStack{
-                Spacer().frame(height: 42)
-                Image("Title")
+            VStack {
                 Spacer().frame(height: 42)
                 
+                HStack {
+                    
+                    Image("Title")
+                    
+                    Spacer().frame(width: 90)
+                    
+                    Button {
+                        showMiniGame = true
+                    } label: {
+                        ZStack {
+                            Circle()
+                                .fill(Color.white)
+                                .frame(width: 80, height: 80)
+                                .shadow(color: .black.opacity(0.25), radius: 8, x: 0, y: 4)
+                            
+                            Image(systemName: "gamecontroller.fill")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 45, height: 45)
+                        }
+                    }
+                    .fullScreenCover(isPresented: $showMiniGame) {
+                        MiniGameView()
+                    }
+                    
+                }
+                Spacer().frame(height: 42)
                 AllCards(selectedCard: $selectedCard)
             }
             
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color(red:255/255,green:246/255,blue:236/255,opacity: 1.0))
             .ignoresSafeArea()
-             
+            
         }
     }
 }
@@ -55,7 +82,7 @@ struct AllCards: View {
                     selectedCard = "beingKind"
                 }){
                     ColorCard(color: .babyYellow) {
-                        CardContent( 
+                        CardContent(
                             imageName: "kind",
                             title: String(localized:"Being Kind"),
                             description:String(localized: "Children should be kind to others and treat them very well")
@@ -70,7 +97,7 @@ struct AllCards: View {
                         CardContent(
                             imageName: "combing",
                             title:String(localized:
-                                "Combing hair"),
+                                            "Combing hair"),
                             description:String(localized: "Children brush their hair and  take care of their look.")
                         )
                     }
@@ -177,13 +204,13 @@ struct CardContent: View {
                 Text(title)
                     .font(.system(size: 50, weight: .bold))
                     .foregroundStyle(Color(red:55/255,green:55/255,blue:55/255,opacity: 1.0))
-//
+                //
                 Spacer().frame(height: 12)
                 
                 Text(description)
                     .font(.system(size: 18, weight: .regular))
                     .foregroundStyle(Color(red:55/255,green:55/255,blue:55/255,opacity: 0.5))
-                    
+                
             }
         }
     }

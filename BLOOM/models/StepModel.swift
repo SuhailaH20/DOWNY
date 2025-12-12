@@ -15,3 +15,9 @@ struct StepModel {
     //--------
     let audioF: String?
 }
+
+struct MiniGameQuestion {
+    let questionImage: String
+    let correctImage: String
+    let wrongImages: [String]
+}
